@@ -12,5 +12,6 @@ package com.gql.test10;
 public class Demo01 {
     public static void main(String[] args) {
         System.out.println("123");
+        System.out.println("1");
     }
 }
