@@ -10,4 +10,7 @@ package com.gql.test10;
  * @date 23:10 - 2021/3/15
  */
 public class Demo01 {
+    public static void main(String[] args) {
+        System.out.println("123");
+    }
 }
