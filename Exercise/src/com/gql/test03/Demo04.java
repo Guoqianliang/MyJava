@@ -15,65 +15,74 @@ public class Demo04 {
     public static void main(String[] args) {
 
         System.out.println("请输入学生的个数n：");
+        // 输入学生的个数n
         int n = in.nextInt();
 
-        int[] student = new int[5];
-        // 为每门课程都创建一维数组
-        int[] math = new int[n];
-        int[] english = new int[n];
-        int[] java = new int[n];
-        int[] linearAlgebra = new int[n];
-        int[] physics = new int[n];
+        // 创建n行5列的二维数组,规定5列依次为高数成绩、英语成绩、Java语言成绩、线性代数成绩、物理成绩
+        int[][] arr = new int[n][5];
 
-        int courseNumber = 5;
-        for (int i = 0; i < courseNumber; i++) {
-            for (int j = 0; j < courseNumber; j++) {
-                // 输入的成绩既要给student数组还要给学科数组
-                int temp = 0;
-                switch (j) {
-                    case 0:
-                        System.out.println("请输入第" + (i + 1) + "位学生的高数成绩：");
-                        temp = in.nextInt();
-                        math[i] = temp;
-                        break;
-                    case 1:
-                        System.out.println("请输入第" + (i + 1) + "位学生的英语成绩：");
-                        temp = in.nextInt();
-                        english[i] = temp;
-                        break;
-                    case 2:
-                        System.out.println("请输入第" + (i + 1) + "位学生的Java成绩：");
-                        temp = in.nextInt();
-                        java[i] = temp;
-                        break;
-                    case 3:
-                        System.out.println("请输入第" + (i + 1) + "位学生的线代成绩：");
-                        temp = in.nextInt();
-                        linearAlgebra[i] = temp;
-                        break;
-                    case 4:
-                        System.out.println("请输入第" + (i + 1) + "位学生的物理成绩：");
-                        temp = in.nextInt();
-                        physics[i] = temp;
-                        break;
-                    default:
-                        break;
-                }
-                student[j] = temp;
-            }
-            // 计算最高分
-            int maxScore = Util.maxArr(student);
-            // 计算最低分
-            int minScore = Util.minArr(student);
-            // 计算平均分
-            int aveScore = Util.aveArr(student);
-            System.out.println("=======>学生" + (i + 1) + "的最高分为:" + maxScore + ",最低分为:" + minScore + ",平均分为:" + aveScore);
+        // 将n个学生的成绩输入到二维数组arr[n][5]中.
+        for (int i = 0; i < n; i++) {
+            System.out.println("请输入第" + (i + 1) + "个学生的成绩:(顺序为：高数👉英语👉Java👉线性代数👉物理)");
+            arr[i][0] = in.nextInt();
+            arr[i][1] = in.nextInt();
+            arr[i][2] = in.nextInt();
+            arr[i][3] = in.nextInt();
+            arr[i][4] = in.nextInt();
         }
-        // 各科目最高分、最低分、平均分
-        System.out.println("《数学课程》" + "的最高分为:" + Util.maxArr(math) + ",最低分为:" + Util.minArr(math) + ",平均分为:" + Util.aveArr(math));
-        System.out.println("《英语课程》" + "的最高分为:" + Util.maxArr(english) + ",最低分为:" + Util.minArr(english) + ",平均分为:" + Util.aveArr(english));
-        System.out.println("《Java课程》" + "的最高分为:" + Util.maxArr(java) + ",最低分为:" + Util.minArr(java) + ",平均分为:" + Util.aveArr(java));
-        System.out.println("《线代课程》" + "的最高分为:" + Util.maxArr(linearAlgebra) + ",最低分为:" + Util.minArr(linearAlgebra) + ",平均分为:" + Util.aveArr(linearAlgebra));
-        System.out.println("《物理课程》" + "的最高分为:" + Util.maxArr(physics) + ",最低分为:" + Util.minArr(physics) + ",平均分为:" + Util.aveArr(physics));
+        System.out.println("您所构建的二维数组是：");
+        for (int[] a : arr) {
+            for (int i : a) {
+                System.out.print(i + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println("学生成绩输入完成！");
+
+        // 将arr[n][5]的数据备份到arr2[n][5]中.
+        int[][] arr2 = new int[n][5];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 5; j++) {
+                arr2[i][j] = arr[i][j];
+            }
+        }
+
+        //下面在arr数组中对学生个人成绩进行分析:
+        System.out.println("------各学生成绩分析如下:");
+        for (int m = 0; m < n; m++) {
+            int sum = 0;
+            //对二维数组的一行进行选择排序
+            for (int i = 0; i < (5 - 1); i++) {
+                for (int j = i + 1; j < 5; j++) {
+                    if (arr[m][i] > arr[m][j]) {
+                        int temp = arr[m][j];
+                        arr[m][j] = arr[m][i];
+                        arr[m][i] = temp;
+                    }
+                }
+                sum = sum + arr[m][i];
+            }
+            sum = sum + arr[m][4];
+            System.out.println("第" + (m + 1) + "个学生的最高分是:" + arr[m][4] + ",最低分是:" + arr[m][0] + "平均分是" + sum / 5);
+        }
+
+        // 下面在arr2数组中对每个科目的成绩进行分析:
+        System.out.println("------各课程成绩分析如下:");
+        for (int m = 0; m < 5; m++) {
+            int sum = 0;
+            //对二维数组的一列进行选择排序
+            for (int i = 0; i < arr2.length - 1; i++) {
+                for (int j = i + 1; j < arr2.length; j++) {
+                    if (arr2[i][m] > arr2[j][m]) {
+                        int temp = arr2[j][m];
+                        arr2[j][m] = arr2[i][m];
+                        arr2[i][m] = temp;
+                    }
+                }
+                sum = sum + arr2[i][m];
+            }
+            sum = sum + arr2[n - 1][m];
+            System.out.println("第" + (m + 1) + "门课程的最高分是:" + arr2[n - 1][m] + ",最低分是" + arr[0][m] + ",平均分是:" + sum / n);
+        }
     }
 }

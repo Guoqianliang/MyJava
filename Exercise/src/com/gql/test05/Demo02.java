@@ -12,11 +12,11 @@ public class Demo02 {
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle(3, 7);
         System.out.println("长为" + rectangle.getWidth() + ",宽为" + rectangle.getHeight() + "的矩形的周长C为" + rectangle.c() + ",面积S为" + rectangle.s());
-
     }
 }
-
+// 创建矩形类
 class Rectangle {
+    // 定义矩形长、宽属性
     private int width;
     private int height;
 
@@ -51,6 +51,4 @@ class Rectangle {
     public int getHeight() {
         return height;
     }
-
-
 }

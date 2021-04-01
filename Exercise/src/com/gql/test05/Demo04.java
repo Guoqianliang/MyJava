@@ -11,7 +11,7 @@ import java.util.StringJoiner;
  */
 public class Demo04 {
     public static void main(String[] args) {
-        Person person = new Person("王小花", "女", 10);
+        Person person = new Person("王小花", "女", 24);
         System.out.println("合法赋值后的对象===>" + person);
 
         person.setAge(110);

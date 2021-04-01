@@ -1,7 +1,6 @@
 package com.gql.test04;
 
-import com.gql.test03.Util;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -20,7 +19,20 @@ public class Demo02 {
             arr[i] = in.nextInt();
         }
 
-        System.out.println("十个数中的最大值为：" + Util.maxArr(arr));
-        System.out.println("十个数中的最小值为" + Util.minArr(arr));
+        //方法1:升序快排
+        Arrays.sort(arr);
+
+//        // 方法2:选择排序
+//        for (int i = 0; i < arr.length - 1; i++) {
+//            for (int j = 0; j < arr.length; j++) {
+//                if (arr[i] > arr[j]) {
+//                    int temp = arr[j];
+//                    arr[j] = arr[i];
+//                    arr[i] = temp;
+//                }
+//            }
+//        }
+        System.out.println("十个数中的最大值为：" + arr[arr.length - 1]);
+        System.out.println("十个数中的最小值为" + arr[0]);
     }
 }

@@ -10,7 +10,7 @@ import java.util.StringJoiner;
  */
 public class Demo01 {
     public static void main(String[] args) {
-        Bio gql = new Bio("郭乾亮", 22, 180, "男", "保密", "热恋中", "保密");
+        Bio gql = new Bio("郭乾亮", 22, 180, "男", "保密", "保密", "保密");
         System.out.println(gql);
     }
 }
@@ -19,6 +19,7 @@ public class Demo01 {
  * 个人简历类
  */
 class Bio {
+    // 属性
     private String name;
     private Integer age;
     private int height;
@@ -27,36 +28,44 @@ class Bio {
     private String maritalStatus;
     private String tel;
 
+    // 下面是setter和getter方法---------------
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public Integer getAge() {
+
         return age;
     }
 
     public void setAge(Integer age) {
         this.age = age;
+
     }
 
     public int getheight() {
         return height;
+
     }
 
     public void setheight(int height) {
         this.height = height;
+
     }
 
     public String getGender() {
         return gender;
+
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+
     }
 
     public String getSchool() {
@@ -83,6 +92,7 @@ class Bio {
         this.tel = tel;
     }
 
+    // Bio的构造函数-----------------
     public Bio() {
     }
 
@@ -96,6 +106,7 @@ class Bio {
         this.tel = tel;
     }
 
+    // toString方法,代替showInfo方法
     @Override
     public String toString() {
         return new StringJoiner(", ", Bio.class.getSimpleName() + "[", "]")
