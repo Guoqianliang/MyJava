@@ -7,7 +7,6 @@ import java.util.Scanner;
  * 请编写一个程序，通过键盘录入他们的成绩，并计算输出每位同学的
  * 课程最高分，最低分和平均分，以及每门课程的班级最高分、最低分和平均分。
  * @author Guoqianliang
- * @date 11:23 - 2021/3/14
  */
 public class Demo04 {
     static Scanner in = new Scanner(System.in);

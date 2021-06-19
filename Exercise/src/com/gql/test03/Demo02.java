@@ -9,7 +9,6 @@ import java.util.Scanner;
  *      +3位随机数.x
  * 请编程自动生成公司固定资产产品编号。
  * @author Guoqianliang
- * @date 10:13 - 2021/3/14
  */
 public class Demo02 {
     public static void main(String[] args) {

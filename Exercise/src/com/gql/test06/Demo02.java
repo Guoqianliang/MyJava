@@ -6,19 +6,13 @@ package com.gql.test06;
  * （2）本科生类undergraduate增加一个degree属性，有一个包含三个参数的构造方法，前两个参数用于给继承的name和age属性赋值，第三个参数给degree专业赋值，一个show方法用于打印undergraduate的属性信息
  * （3）在测试类中分别创建AbstractStudent和undergraduate对象，调用他们的show方法
  * @author Guoqianliang
- * @date 15:15 - 2021/3/15
  */
 public class Demo02 {
     public static void main(String[] args) {
-        AbstractStudent abstractStudent = new AbstractStudent("小王", 23) {
-            @Override
-            public void show() {
-                super.show();
-            }
-        };
+        AbstractStudent abstractStudent = new AbstractStudent("张三", 18);
         abstractStudent.show();
 
-        Undergraduate undergraduate = new Undergraduate("小花", 18, "本科");
+        Undergraduate undergraduate = new Undergraduate("李四", 24, "本科");
         undergraduate.show();
     }
 }
@@ -26,9 +20,9 @@ public class Demo02 {
 /**
  * 学生抽象类
  */
-abstract class AbstractStudent {
-    public String name;
-    public Integer age;
+class AbstractStudent {
+    private String name;
+    private Integer age;
 
     public AbstractStudent(String name, Integer age) {
         this.name = name;
@@ -37,6 +31,14 @@ abstract class AbstractStudent {
 
     public void show() {
         System.out.println("我是一个学生，我叫" + name + ",我今年" + age + "岁了。");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
     }
 }
 
@@ -53,6 +55,6 @@ class Undergraduate extends AbstractStudent {
 
     @Override
     public void show() {
-        System.out.println("我是一个学生，我叫" + name + ",我今年" + age + "岁了,我的学历是" + degree + "。");
+        System.out.println("我是一个学生，我叫" + super.getName() + ",我今年" + super.getAge() + "岁了,我的学历是" + degree + "。");
     }
 }

@@ -3,7 +3,6 @@ package com.gql.test08;
 /**
  * @Description: 阅读程序：求y阶乘。
  * @author Guoqianliang
- * @date 18:13 - 2021/3/15
  */
 public class Demo01 {
     public static void main(String[] args) {

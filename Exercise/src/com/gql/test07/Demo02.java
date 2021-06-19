@@ -3,7 +3,6 @@ package com.gql.test07;
 /**
  * @Description: 编写接口和实现类：动物（animal）会动，老虎（tigger）会跑，鸟（bird）会飞，鱼（fish）会游。测试运行结果.
  * @author Guoqianliang
- * @date 17:32 - 2021/3/15
  */
 public class Demo02 {
     public static void main(String[] args) {

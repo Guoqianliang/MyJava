@@ -6,7 +6,6 @@ package com.gql.test05;
  *      （2）在Rectangle类中添加两个方法计算矩形的周长与面积
  *      （3）测试该类
  * @author Guoqianliang
- * @date 17:46 - 2021/3/14
  */
 public class Demo02 {
     public static void main(String[] args) {

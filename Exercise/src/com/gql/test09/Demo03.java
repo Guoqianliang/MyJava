@@ -6,7 +6,6 @@ package com.gql.test09;
  *         多个线程操作同一共享资源时,会将引发数据不安全问题。解决方案:使用线程同步 ===> 1)线程同步 2)同步代码块
  *
  * @author Guoqianliang
- * @date 22:09 - 2021/3/15
  */
 public class Demo03 {
     public static void main(String[] args) {
@@ -29,15 +28,20 @@ class MyRunnableImpl implements Runnable {
     private int alreadyGive = 0;
 
     @Override
-    synchronized public void run() {
-
+    public void run() {
+        //
         while (true) {
-            if (notesCount <= 0) {
-                break;
+            if (notesCount <= 2) {
+                return;
             }
-            notesCount--;
-            alreadyGive++;
-            System.out.println(Thread.currentThread().getName() + "发放了第" + alreadyGive + "份学习笔记,还剩余" + notesCount + "份笔记.");
+            method();
         }
     }
+
+    synchronized private void method() {
+        notesCount--;
+        alreadyGive++;
+        System.out.println(Thread.currentThread().getName() + "发放了第" + alreadyGive + "份学习笔记,还剩余" + notesCount + "份笔记.");
+    }
+
 }

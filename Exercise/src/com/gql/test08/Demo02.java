@@ -14,7 +14,6 @@ import java.util.NoSuchElementException;
  * 使用try…catch语句捕获异常，调用NothissoundException的getMessage( )方法打印出异常信息。
  *
  * @author Guoqianliang
- * @date 18:29 - 2021/3/15
  */
 public class Demo02 {
     public static void main(String[] args) {
@@ -26,10 +25,12 @@ public class Demo02 {
  * 自定义异常类
  */
 class NothissoundException extends Exception {
+    // 无参构造
     public NothissoundException() {
 
     }
 
+    // 有参构造
     public NothissoundException(String message) {
         super(message);
     }

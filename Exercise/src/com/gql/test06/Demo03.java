@@ -3,16 +3,18 @@ package com.gql.test06;
 /**
  * @Description: 定义一个类，包含求面积方法，可以求三角形、正方形、圆的面积，在测试类中分别创建类对象并打印你需要的图形面积。
  * @author Guoqianliang
- * @date 15:45 - 2021/3/15
  */
 public class Demo03 {
     public static void main(String[] args) {
+        // 求三角形面积
         new Area() {
         }.triangle(3, 4);
 
+        // 求矩形面积
         new Area() {
         }.rectangle(5, 5);
 
+        // 求圆形面积
         new Area() {
         }.round(2);
     }
@@ -21,7 +23,7 @@ public class Demo03 {
 /**
  * 计算面积的抽象类
  */
-abstract class Area {
+class Area {
     /**
      * 计算三角形面积
      * base: 底边长

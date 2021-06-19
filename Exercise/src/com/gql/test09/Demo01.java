@@ -4,7 +4,6 @@ package com.gql.test09;
  * @Description: 读代码，并总结其描述的功能。
  *      创建了3条线程,分别设置不同的优先级后,执行.
  * @author Guoqianliang
- * @date 18:41 - 2021/3/15
  */
 public class Demo01 {
     public static void main(String[] args) {

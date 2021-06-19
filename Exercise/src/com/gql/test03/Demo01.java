@@ -7,14 +7,12 @@ import java.util.Scanner;
  * 未猜中时，提示数过大或过小，直到所猜次数用完；猜中时，指出猜的次数。
  * 注意:仅能输入数字,输入字符会报错
  * @author Guoqianliang
- * @date 9:04 - 2021/3/14
  */
 public class Demo01 {
     public static void main(String[] args) {
-        // 定义输入对象in
         Scanner in = new Scanner(System.in);
 
-        // 调用random函数生成一个随机数
+        // 调用random函数生成一个[1,100]间的随机数
         int min = 1, max = 100;
         int random = random(min, max);
 

@@ -1,16 +1,18 @@
 package com.gql.test04;
 
+import java.util.Scanner;
+
 /**
  * @Description: 编写一个求100-------200之间素数的方法。要求：边界值通过参数传进出。
  * 提示：判断一个数是否是素数，然后利用循环在给定的范围里找素数。
  * @author Guoqianliang
- * @date 17:04 - 2021/3/14
  */
 public class Demo01 {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
         // 定义区间边界值,并初始化计数器
         int begin = 100, end = 200, count = 0;
-
         System.out.println(begin + "到" + end + "之间的素数有：");
         // 遍历区间
         for (int i = begin; i <= end; i++) {

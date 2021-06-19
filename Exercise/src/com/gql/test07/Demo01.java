@@ -14,7 +14,6 @@ package com.gql.test07;
  *      二、构造函数：通过构造函数创建Fruit对象.
  *      三、Getter和Setter方法 : 通过 object.getXxx(); 得到对象的name和price属性
  * @author Guoqianliang
- * @date 16:33 - 2021/3/15
  */
 public class Demo01 {
     public static void main(String[] args) {

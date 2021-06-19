@@ -6,7 +6,6 @@ import java.util.Scanner;
 /**
  * @Description: 一个任意4位正整数（各位数字不同），将数字重新组合成一个最大数及一个最小数，求最大数与最小数的差。
  * @author Guoqianliang
- * @date 16:32 - 2021/3/14
  */
 public class Demo05 {
     public static void main(String[] args) {
